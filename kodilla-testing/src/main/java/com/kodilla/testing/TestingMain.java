@@ -22,7 +22,7 @@ public class TestingMain {
             int addResult = calculator.add(260, 543);
 
             if (addResult == 803){
-                System.out.println("Add result ok");
+                System.out.println("Add result - ok");
             } else {
                 System.out.println("Add - error");
             }
