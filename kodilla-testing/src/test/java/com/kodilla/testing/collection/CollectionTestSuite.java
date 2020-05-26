@@ -7,13 +7,9 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class CollectionTestSuite {
-
-    ArrayList<Integer> normalArrayList = new ArrayList<>();
-    ArrayList<Integer> oddArrayExtract = new ArrayList<>();
-    ArrayList<Integer> emptyArrayList = new ArrayList<>();
 
     @Before
     public void before(){
@@ -28,13 +24,13 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorEmptyList(){
         //Given
+        ArrayList<Integer> emptyArrayList = new ArrayList<>();
+        ArrayList<Integer> normalArrayList = new ArrayList<>();
         System.out.println("Empty ArrayList size: " + emptyArrayList.size());
-        System.out.println("Normal ArrayList size: " + normalArrayList.size());
         //When
         OddNumbersExterminator completedList = new OddNumbersExterminator(emptyArrayList);
         completedList.exterminate(emptyArrayList);
         System.out.println("Empty ArrayList size: " + emptyArrayList.size());
-        System.out.println("Normal ArrayList size: " + normalArrayList.size());
         //Then
         Assert.assertEquals(normalArrayList, emptyArrayList);
     }
@@ -42,28 +38,21 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorNormalList(){
         //Given
-        Random randomNumber = new Random();
-        for (int i=0; i<20; i++) {
-            normalArrayList.add(randomNumber.nextInt(50));
-            if (normalArrayList.get(i) % 2 == 0) {
-                oddArrayExtract.add(normalArrayList.get(i));
-            }
-            System.out.print(normalArrayList.get(i) + " ");
-        }
-        System.out.println("\nList completed, ArrayList size: " + normalArrayList.size());
+        ArrayList<Integer> normalArrayList = new ArrayList<>();
+        normalArrayList.add(1);
+        normalArrayList.add(2);
+        normalArrayList.add(3);
+        normalArrayList.add(4);
+        normalArrayList.add(5);
+        normalArrayList.add(6);
+
+        ArrayList<Integer> oddArrayExtract = new ArrayList<>();
+        oddArrayExtract.add(2);
+        oddArrayExtract.add(4);
+        oddArrayExtract.add(6);
         //When
-        OddNumbersExterminator completedList = new OddNumbersExterminator(normalArrayList);
-        completedList.exterminate(normalArrayList);
-
-        for (Object i : normalArrayList) {
-            System.out.print(i.toString() + " ");
-        }
-        System.out.println("\nOdd numbers extermination, ArrayList size: " + completedList.size());
-
-        for (Object i : oddArrayExtract) {
-            System.out.print(i.toString() + " ");
-        }
-        System.out.println("\nList of even numbers, Arraylist size: " + oddArrayExtract.size());
+        OddNumbersExterminator completedList1 = new OddNumbersExterminator(normalArrayList);
+        completedList1.exterminate(normalArrayList);
         //Then
         Assert.assertEquals(oddArrayExtract, normalArrayList);
     }

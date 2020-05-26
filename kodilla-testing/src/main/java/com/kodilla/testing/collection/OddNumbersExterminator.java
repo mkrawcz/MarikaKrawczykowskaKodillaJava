@@ -22,11 +22,7 @@ public class OddNumbersExterminator {
                  System.out.println("Even number ommited");
              }
          }
-        System.out.println("Exterminator ended working. ArrayList size: " + numbers.size());
+        System.out.println("ArrayList with even numbers size: " + numbers.size());
          return numbers;
-    }
-
-    int size() {
-        return numbers.size();
     }
 }
