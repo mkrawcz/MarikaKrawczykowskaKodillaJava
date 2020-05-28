@@ -24,20 +24,18 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorEmptyList(){
         //Given
+        OddNumbersExterminator exterminator = new OddNumbersExterminator();
         ArrayList<Integer> emptyArrayList = new ArrayList<>();
-        ArrayList<Integer> normalArrayList = new ArrayList<>();
-        System.out.println("Empty ArrayList size: " + emptyArrayList.size());
         //When
-        OddNumbersExterminator completedList = new OddNumbersExterminator(emptyArrayList);
-        completedList.exterminate(emptyArrayList);
-        System.out.println("Empty ArrayList size: " + emptyArrayList.size());
+        List<Integer> resultList = exterminator.exterminate(emptyArrayList);
         //Then
-        Assert.assertEquals(normalArrayList, emptyArrayList);
+        Assert.assertEquals(0, resultList.size());
     }
 
     @Test
     public void testOddNumbersExterminatorNormalList(){
         //Given
+        OddNumbersExterminator exterminator = new OddNumbersExterminator();
         ArrayList<Integer> normalArrayList = new ArrayList<>();
         normalArrayList.add(1);
         normalArrayList.add(2);
@@ -46,15 +44,15 @@ public class CollectionTestSuite {
         normalArrayList.add(5);
         normalArrayList.add(6);
 
+        //When
+        List<Integer> resultList = exterminator.exterminate(normalArrayList);
+        //Then
         ArrayList<Integer> oddArrayExtract = new ArrayList<>();
         oddArrayExtract.add(2);
         oddArrayExtract.add(4);
         oddArrayExtract.add(6);
-        //When
-        OddNumbersExterminator completedList1 = new OddNumbersExterminator(normalArrayList);
-        completedList1.exterminate(normalArrayList);
-        //Then
-        Assert.assertEquals(oddArrayExtract, normalArrayList);
+        Assert.assertEquals(oddArrayExtract, resultList);
+        Assert.assertEquals(6, normalArrayList.size());
     }
 
 }
