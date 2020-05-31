@@ -4,13 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OddNumbersExterminator {
-    ArrayList<Integer> numbers;
 
-    public OddNumbersExterminator(ArrayList<Integer> numbers) {
-        this.numbers = numbers;
-    }
-
-    public ArrayList<Integer> exterminate(ArrayList<Integer> numbers) {
+    /*public ArrayList<Integer> exterminate(ArrayList<Integer> numbers) {
          int i = numbers.size();
          while (i != 0) {
              i--;
@@ -22,7 +17,20 @@ public class OddNumbersExterminator {
                  System.out.println("Even number ommited");
              }
          }
-        System.out.println("ArrayList with even numbers size: " + numbers.size());
+         System.out.println("ArrayList with even numbers size: " + numbers.size());
          return numbers;
+    }*/
+
+    public List<Integer> exterminate(List<Integer> numbers) {
+        List<Integer> resultList = new ArrayList<>();
+
+        for(Integer el : numbers) {
+            if (el % 2 == 0) {
+                resultList.add(el);
+            }
+        }
+
+        return resultList;
+
     }
 }
