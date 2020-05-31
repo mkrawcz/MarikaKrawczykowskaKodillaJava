@@ -1,4 +1,4 @@
 package com.kodilla.testing.shape;
 
-public class Circle {
+public class Circle implements Shape{
 }
