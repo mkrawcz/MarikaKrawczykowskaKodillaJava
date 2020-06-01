@@ -6,17 +6,44 @@ import java.util.List;
 public class ShapeCollector {
     private List<Shape> shapesList = new ArrayList<>();
 
-    public void addFigure(Shape shape) {
-        shapes.add(shape);
+    public boolean addFigure(Shape shape) {
+        boolean result = false;
+        shapesList.add(shape);
+        if (shapesList.contains(shape)) {
+            result = true;
+        }
+        return result;
     }
 
 
-    public void removeFigure(Shape shape){
-        shapes.remove(shape);
+    public boolean removeFigure(Shape shape){
+        boolean result = false;
+        if (shapesList.contains(shape)) {
+            shapesList.remove(shape);
+            result = true;
+        }
+        return result;
     }
 
-    public void getFigure(int n){}
+    public Shape getFigure(int n){
+        Shape theFigure = null;
+        if ((n >= 0) && (n <= shapesList.size())) {
+            theFigure = shapesList.get(n);
+        }
+        return theFigure;
+    }
 
-    public void showFigures(){}
+    public ArrayList<String> showFigures() {
+        ArrayList<String> showList = new ArrayList<>();
+        for (Shape currentShape : shapesList) {
+            String currentShowFigure = (currentShape.getShapeName() + " " + currentShape.getField());
+            showList.add(currentShowFigure);
+        }
+        return showList;
+    }
+
+    public int shapesListSize() {
+        return shapesList.size();
+    }
 
 }
