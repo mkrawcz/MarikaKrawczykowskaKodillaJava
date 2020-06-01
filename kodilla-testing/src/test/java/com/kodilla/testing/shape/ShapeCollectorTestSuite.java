@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 
 public class ShapeCollectorTestSuite {
 
-    private static int testCounter = 0;
+    private static int testCounter = 1;
 
     @Before
     public void Before() {
