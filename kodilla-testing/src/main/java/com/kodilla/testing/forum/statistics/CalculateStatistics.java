@@ -2,17 +2,12 @@ package com.kodilla.testing.forum.statistics;
 
 public class CalculateStatistics {
 
-    private Statistics statistics;
     private int numberOfUsers;
     private int numberOfPosts;
     private int numberOfComments;
     private double averageNumberOfPostsForUser;
     private double averageNumberOfCommentsForUser;
     private double averageNumbersOfCommentsForPost;
-
-    public CalculateStatistics(Statistics statistics) {
-        this.statistics = statistics;
-    }
 
     public void calculateAdvStatistics(Statistics statistics){
         numberOfUsers = statistics.usersNames().size();
