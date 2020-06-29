@@ -1,8 +1,8 @@
 package com.kodilla.stream.beautifier;
 
 public class StringEncloser {
-    private final String leftSide;
-    private final String rightSide;
+    private String leftSide;
+    private String rightSide;
 
     public StringEncloser(String leftSide, String rightSide) {
         this.leftSide = leftSide;
