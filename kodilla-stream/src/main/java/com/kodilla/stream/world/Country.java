@@ -1,19 +1,44 @@
 package com.kodilla.stream.world;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public final class Country {
     private final String countryName;
-    private final BigDecimal countryPeopleQuantity;
-    private final String nameOfContinent;
+    private final BigDecimal peopleQuantity;
 
-    public Country(String countryName, BigDecimal countryPeopleQuantity, String nameOfContinent) {
+    public Country(final String countryName, final BigDecimal peopleQuantity) {
         this.countryName = countryName;
-        this.countryPeopleQuantity = countryPeopleQuantity;
-        this.nameOfContinent = nameOfContinent;
+        this.peopleQuantity = peopleQuantity;
     }
 
-    public BigDecimal getCountryPeopleQuantity() {
-        return countryPeopleQuantity;
+    public String getCountryName() {
+        return countryName;
+    }
+
+    public BigDecimal getPeopleQuantity() {
+        return peopleQuantity;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Country country = (Country) o;
+        return Objects.equals(countryName, country.countryName) &&
+                Objects.equals(peopleQuantity, country.peopleQuantity);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(countryName, peopleQuantity);
+    }
+
+    @Override
+    public String toString() {
+        return "Country{" +
+                "countryName='" + countryName + '\'' +
+                ", peopleQuantity=" + peopleQuantity +
+                '}';
     }
 }

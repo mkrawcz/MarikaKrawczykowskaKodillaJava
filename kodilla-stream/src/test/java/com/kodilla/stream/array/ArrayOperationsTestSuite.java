@@ -41,7 +41,7 @@ public class ArrayOperationsTestSuite {
         double result3 = ArrayOperations.getAverage(array3);
 
         //THEN
-        Assert.assertEquals(0, 0);
+        Assert.assertEquals(0, result3, 0.001);
     }
 
     //test analogiczny jak wyżej z innymi warościami w tablicy
