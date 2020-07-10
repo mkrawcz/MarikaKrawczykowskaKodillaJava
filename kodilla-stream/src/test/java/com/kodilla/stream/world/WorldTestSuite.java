@@ -23,7 +23,6 @@ public class WorldTestSuite {
         world.addContinent(northAmerica);
         world.addContinent(asia);
 
-        //WHEN
         southAmerica.addCountry(new Country("Brazil", new BigDecimal("212393000")));
         southAmerica.addCountry(new Country("Argentina", new BigDecimal("45102000")));
         southAmerica.addCountry(new Country("Colombia", new BigDecimal("48549000")));
@@ -37,8 +36,11 @@ public class WorldTestSuite {
         asia.addCountry(new Country("India", new BigDecimal("1324009090")));
         asia.addCountry(new Country("Indonesia", new BigDecimal("255462000")));
 
+        //WHEN
+        BigDecimal worldPeopleQuantity = world.getPeopleQuantity();
+
         //THEN
-        assertEquals(new BigDecimal("4474597159"), world.getPeopleQuantity());
+        assertEquals(new BigDecimal("4474597159"), worldPeopleQuantity);
     }
 
 }
