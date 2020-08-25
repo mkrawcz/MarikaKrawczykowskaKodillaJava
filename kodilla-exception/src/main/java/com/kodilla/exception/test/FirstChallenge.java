@@ -29,7 +29,7 @@ public class FirstChallenge {
 
         } finally {
 
-            System.out.println("Something's wrong, try again!");
+            System.out.println("I'll always be here ;)");
         }
     }
 }
