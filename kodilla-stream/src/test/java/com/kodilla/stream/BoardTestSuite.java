@@ -51,7 +51,7 @@ public class BoardTestSuite {
                 user3,
                 user2,
                 LocalDate.now().minusDays(10),
-                LocalDate.now().plusDays(25));
+                LocalDate.now().plusDays(25));  //teleon mi sie zawiesil :D cos mam nie tak ze skype
         Task task5 = new Task("Optimize searching",
                 "Archive data searching has to be optimized",
                 user4,
