@@ -9,7 +9,7 @@ public class FlightSchedule {
 
     public FlightSchedule () {
         possibilityOfFlight = new HashMap<>();
-        possibilityOfFlight.put("Rio de Janeiro Galeao", false);
+        possibilityOfFlight.put("Rio de Janeiro Galeao", true);
         possibilityOfFlight.put("Zurich Airport", false);
         possibilityOfFlight.put("Warsaw Chopin", true);
     }
